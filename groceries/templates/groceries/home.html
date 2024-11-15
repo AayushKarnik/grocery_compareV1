@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grocery Comparison Home</title>
+</head>
+<body>
+    <h1>Welcome to Grocery Comparison</h1>
+    <form method="get" action="{% url 'product_search' %}">
+        <input type="text" name="query" placeholder="Search products...">
+        <button type="submit">Search</button>
+    </form>
+    <h2>Featured Stores</h2>
+    <ul>
+        {% for store in featured_stores %}
+            <li>{{ store.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
